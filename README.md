@@ -1,9 +1,14 @@
-## pitch-world
+### pitch-world
 This is a flask application that allows users to post one minute pitches and also allows other users who have signed up to comment and upvote or downvote a pitch. It also allows a person to signup to be able to access the functionalities of the application
 
 
-### contribution 
+## contribution 
    Ann wangui
+
+## Technologies used
+  flask
+  SQAlCHEMY
+  python3.8
 
 ## User stories
 1. Comment on the different pitches posted py other uses.
