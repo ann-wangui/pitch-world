@@ -1,0 +1,30 @@
+body {
+    background-color: burlywood;
+    font-size: 1.5rem
+}
+.head{
+    background-color: olive;
+    width: 100%;
+
+}
+.list_unstyle, .cat{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+.cat {
+    align-items: center;
+}
+.main {
+    padding: 1rem;
+}
+.content {
+    text-align: center;
+}
+.card {
+    margin-bottom: 2rem;
+    background-color: turquoise;
+}
+.vote {
+    padding-left: 1rem;
+}
