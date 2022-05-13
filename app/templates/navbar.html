@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <div class="navbar-header">
+        <div class="head">
+        <a class="navbar-brand" href="/"> Pitch App </a>
+        <ul class="list_unstyle">
+            <li class="nav-item active"><a class="nav-link main" href="/">Pitches</a></li>
+            <li class="nav-item"><a class="nav-link active" href="{{url_for('main.new_pitch')}}">Create Pitch</a></li>
+            <!-- add link to direct us to the profile page -->
+            {% if current_user.is_authenticated %}
+            <li><a href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a> <span><i class="fas fa-user"></i></span> {{current_user.username}}</li>
+            <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
+            {% else %}
+            <li><a href="{{url_for('auth.login')}}">Sign in</a></li>
+            {%endif%}
+        </ul>
+            </div> 
+</div>
+
+</div>
+</div>
