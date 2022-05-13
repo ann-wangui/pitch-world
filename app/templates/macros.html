@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="{{url_for('static',filename='CSS/index.css')}}">
+{% macro display(pitches) %}
+<div class="container-fluid">
+<div class="row">
+    {% if pitches %}
+    {% for pitch in pitches %}
+    <div class="col-md-6">
+        <div class="card">
+        <div class="card-heading">
+        <p>Category: {{pitch.category}}</p>
+        </div>
+        <div class="card-body">
+            <p><strong>{{ pitch.title}}</strong></p>
+            <p>{{ pitch.post}}</p>
+        </div>
+        <br>
+        <div class = vote>
+        <span class="pl-3"><a href="{{url_for('main.upvote',id = pitch.id)}}"> <i class="fa fa-thumbs-up" id="like"></i></a> {{pitch.upvote.count()}}</span>
+        <span class="pl-3"><a class="text-dark" href="{{url_for('main.downvote',id = pitch.id)}}"><i class="fa fa-thumbs-down" id="dislike"></i>{{pitch.downvote.count()}}</a></span>
+        <span class="pl-4"><a href="{{url_for('main.comment',pitch_id = pitch.id)}}" class="btn btn-outline-primary btn-sm"> Comment</a></span>
+    </div>
+    <div class="card-footer">
+        <p>Posted By: {{ pitch.user_id.username }}</p>
+    </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+</div>
+</div>
+{% endmacro %}
