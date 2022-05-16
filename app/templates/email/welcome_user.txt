@@ -1,0 +1,3 @@
+Hello {{user.username}}
+Welcome to Pitches
+Thank you for signing up, you can go ahead and start pitching in the app.

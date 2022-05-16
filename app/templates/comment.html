@@ -1,0 +1,41 @@
+
+{% extends 'base.html'%}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block styles%}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='CSS/index.css')}}">
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% if comments %}
+        <div class="col-md-4">
+            <h4>Post Comments</h4>
+            {% for comment in comments %}
+            <div class="card">
+                <h5>{{comment.pitch.title}}</h5>
+                <p>{{comment.comment}}</p>
+                <p>{{comment.user.username}}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col-md-2">
+            {{wtf.quick_form(form ,button_map={'submit':'outline-primary'})}}
+        </div>
+        {% else %}
+        <div class="col-md-4">
+            <h4>Post comments</h4>
+            <div class="card">
+                <p>This post has no comments</p>
+            </div>
+        </div>
+        <div class="col-md-2">
+            {{wtf.quick_form(form ,button_map={'submit':'outline-primary'})}}
+        </div>
+        {%endif%}
+    </div>
+</div>
+<div class="fixed-bottom">
+    <p>@Copyright (c) All Rights Reserved</p>
+</div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro %}
+
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='CSS/index.css')}}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    
+    <div class="container content">
+        <div  class="container active" id="pitches"><br>
+            {{ macro.display(pitches) }}
+        </div>
+        <div  class="container" id="advertisement"><br>
+            {{ macro.display(advertisement)}}
+        </div>
+        <div  class="container" id="interview"><br>
+            {{ macro.display(interview) }}
+        </div>
+        <div  class="container" id="product"><br>
+            {{ macro.display(product) }}
+            
+        </div>
+        <div  class="container" id="technology"><br>
+            {{ macro.display(technology) }}
+            
+        </div>
+    </div>
+</div>
+{% endblock%}
